@@ -1,0 +1,59 @@
+[
+    {"nombre":"Traveling tricket",
+     "precio":"2000",
+     "currency":"miles",
+     "description":"Fly ticket reedem in airport",
+     "image":"https://acnhcdn.com/latest/FtrIcon/MilePlaneTicket.png"
+    },
+    {"nombre":"DIY Workbench",
+     "precio":"480",
+     "currency":"miles",
+     "description":"DIY workbench recipe",
+     "image":"https://acnhcdn.com/latest/FtrIcon/DIYbook1.png"
+    },
+    {"nombre":"Straw Hat",
+     "precio":"3000",
+     "currency":"miles",
+     "description":"Straw hat for this summer *only available in white",
+     "image":"https://acnhcdn.com/latest/FtrIcon/CapHatStraw2.png"
+    },
+    {"nombre":"Froggie chair",
+     "precio":"400",
+     "currency":"miles",
+     "description":"State of the art chair ribbit",
+     "image":"https://acnhcdn.com/latest/FtrIcon/FtrFrogchair_Remake_0_0.png"
+    },
+    {"nombre":"TeruTeru Umbrella",
+     "precio":"500",
+     "currency":"miles",
+     "description":"Rain rain GO AWAY",
+     "image":"https://acnhcdn.com/latest/FtrIcon/UmbrellaTeruteru0.png"
+    },
+    {"nombre":"K.K Slider poster",
+     "precio":"1000",
+     "currency":"miles",
+     "description":"Cool poster for cool cats",
+     "image":"https://acnhcdn.com/latest/FtrIcon/PosterNpcSpTkkB.png"
+    },
+    {"nombre":"Boarder Blouse",
+     "precio":"1200",
+     "currency":"miles",
+     "description":"Classy yet modern",
+     "image":"https://acnhcdn.com/latest/FtrIcon/TopsTexTopTshirtsLPeasant0.png"
+    },
+    {"nombre":"Bow",
+     "precio":"8000",
+     "currency":"miles",
+     "description":"Straight to the point",
+     "image":"https://acnhcdn.com/latest/FtrIcon/FtrBowJapan_Remake_0_0.png"
+    }
+    ,
+    {"nombre":"Pear Wardrobe",
+     "precio":"2000",
+     "currency":"miles",
+     "description":"Seems delicious but fasionable",
+     "image":"https://acnhcdn.com/latest/FtrIcon/FtrFruitsClosetLR_Remake_0_0.png"
+    }
+
+
+]

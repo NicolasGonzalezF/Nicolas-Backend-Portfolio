@@ -1,0 +1,223 @@
+*{
+    box-sizing: border-box;
+    margin:0 auto;
+
+
+    /* outline: 1px solid red;*/
+}
+
+:root{
+    --contact-colums:repeat(4,1fr);
+    --contact-rows:repeat(6,1fr);
+    }
+    
+body{  
+    background-image: url("../MENU.jpg");
+    width: 100%;
+    height: 100%;
+    background-size: fill;
+    font-family: "Nunito", "Arial Rounded MT Bold", "Helvetica Rounded", Arial,
+    sans-serif;
+    animation: bg_anim 80s linear infinite;
+
+}
+.menu{
+    background-color: rgba(206, 233, 255, 0.747);
+    border-radius:3rem;
+    margin-top: 30px;
+    width: 50%;
+    height: 600px;
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    grid-template-rows: repeat(auto-fit,minmax(20px,1fr));
+} 
+
+.menu__title{
+    color: #30ac7c;
+    margin: auto;
+    text-align: center;
+    height: 90%;
+    width: 90%;
+    background-color: #eefff7;
+    border-radius: 30px;
+    padding: 6px;
+    border: solid #03472d;
+}
+.menu__finances{
+    align-self: center;
+    text-align: center;
+    background-color: aliceblue;
+    border-radius: 30px;
+    width: 90%;
+    height: 50%;
+    padding: 18px;
+}
+.bells{
+    margin-top: 1%;
+    color: gold;
+    text-shadow: -1px 0  rgb(102, 67, 3), 0 1px black, 1px 0 rgb(102, 67, 3), 0 -1px rgb(102, 67, 3);
+}
+.miles{
+    color: rgb(33, 230, 154);
+    text-shadow: -1px 0  rgb(3, 102, 56), 0 1px  rgb(3, 102, 56), 1px 0  rgb(3, 102, 56), 0 -1px  rgb(3, 102, 56);
+}
+/* item cards*/
+.item__cards{
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    border-radius: 5px;
+    border:solid #03472d;
+    background-image: url("../MENU.jpg");
+    animation: bg_anim 80s linear infinite;
+}
+.menu__item{
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-end;
+    background: white;
+    width: 90%;
+    height: 95%;
+    border-radius: 5%;
+    border:solid #30ac7c;
+}
+.item__name{
+    margin-top: 20px;
+    font-size: 25px;
+}
+.item__description{
+    font-size: 20px;
+    color: #03472d;
+}
+.item__image{
+    width: 40%;
+    margin-bottom: 15px auto;
+}
+.reedem__btn{
+    
+    color: #03472d;
+    background-color: rgb(132, 231, 193);
+    border-color: #30ac7c;
+    font-weight: 200;
+    font-size: 1rem;
+    height: 25px;
+    border-radius: 10px;
+    margin: 13px auto;
+    text-align: center;
+}
+
+/*Nook shop items*/
+.shopItems{
+    justify-content: space-evenly;
+    display: grid;
+    margin: 10px;
+    grid-template-columns: repeat(3,1fr);
+
+}
+.shopItemCar{
+    height: 100px;
+    align-items: center;
+    margin: 5px;
+    margin-left: 35px;
+    display: grid;
+    grid-template-columns: 150px 400px;
+    background-color: white;
+    width:400px;
+    border-radius: 10px;
+}
+.shopItem{
+    align-items: center;
+    margin: 10px;
+    margin-left: 35px;
+    display: grid;
+    grid-template-columns: 150px 280px;
+    background-color: white;
+    width: 410px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px; 
+}
+.shopItem__img{
+    place-self: center;
+    width: 85%;
+    height: 90%;
+    margin: 5px;
+    
+}
+
+.shopItem__name{
+    margin-top: 10px;
+    font-size: 20px;
+    color: #30ac7c;
+}
+.shopItem__id , .shopItem__price{
+    font-size: 22px;
+    color: goldenrod;
+}
+.shopItem__id{
+    font-size: 15px;
+}
+
+/*inside the shopping car */
+.car{
+    background-color: white;
+    min-height: 20px;
+    max-height: 200px;
+    width: 45%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    border-radius: 10px;
+    border: solid #03472d;
+}
+
+/**/
+#logOut ,#backMenu{
+    color: white;
+    background-color: red;
+    border: none;
+}
+
+.menu__btn{
+    color: #03472d;
+    align-self: center;
+    border-color: #30ac7c;
+    font-weight: 200;
+    font-size: 1rem;
+    height: 25px;
+    width: fit-content;
+    border-radius: 10px;
+    margin: 13px auto;
+    text-align: center;
+}
+
+
+.menu__form{
+    
+    display:grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: repeat(2,1fr);
+    align-items: center;
+    margin: 30px auto;
+    width: 400px;
+    height: 400px;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    
+    border-radius: 10%;
+    background-color: white;
+}
+.menu__form::-webkit-scrollbar{
+    display: none;
+}
+
+.label{
+    text-align: right;
+    
+}
+@keyframes bg_anim{
+    from{
+        background-position: 100% 0%;
+    }
+    to{
+        background-position: 50% 80%;
+    }
+}

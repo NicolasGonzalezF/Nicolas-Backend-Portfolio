@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="ID=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ADB Terminal</title>
+	<link rel="stylesheet" href="./CCS3/styles.css" id="Styles">
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+	<!--<div id="LogIn"></div> definido en el head porque no me deja cambiar div no creados en el script-->
+	<!--<script src="./JS/script.js"></script>-->
+	<script src="./JS/DOMscript.js" id="DOMcript"  async></script>
+</head>
+
+<body>
+	<!--<p class="paragraph">Welcome to the ABD Terminal</p> -->
+	<section class="login" id="menu">
+		<form action="" class="login__form">
+			<h2 class="login__title">Welcome to the ABD terminal</h2>
+			<input type="user" placeholder="Username " class="login__input" id="userAdress">
+			<input type="password" placeholder="Password " class="login__input" id="passwordKey">
+			<div class="login__buttongroup">
+				<button type="submit" id="login-btn" class="login__cta">Login</button>
+				<button class="login__cta" id="registerBtn">Register</button>
+				<br><br><button class="login__cta" id="nukeBtn">Delete saved Data</button>
+			</div>
+			<div class="login__remember">
+			<input type="checkbox" id="remember">
+			<label for="remember">Remember me</label>
+		</div>
+		</form>	
+		<div class="board__text">
+			<h2 class="board__notice">Welcome tester<br> Your assinged user is: <br> ABD-Debug <br>Password:<br>1234</h2>
+		</div>
+	</section>
+	
+</body>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+	
+</html>
