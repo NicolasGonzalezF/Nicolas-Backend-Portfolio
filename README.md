@@ -1,6 +1,6 @@
 ## Hello and Welcome to my portfolio.
 
-My name is Nicolas Gonzalez Ferreira, i'm a mechatronics engineer and a BackEnd student (2024),
+My name is Nicolas Gonzalez Ferrerosa, i'm a mechatronics engineer and a BackEnd student (2024),
 and this is my portfolio that i've builded in my BackEnd studies.
 
 Inside this repository you will find as to 2024 three (3) files.
