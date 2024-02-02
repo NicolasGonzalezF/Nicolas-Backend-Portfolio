@@ -1,0 +1,22 @@
+body {
+  position: relative;
+  height: 100%;
+}
+
+#usercart {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 500px;
+  height: 90%; /* Adjust height as needed */
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ccc;
+  z-index: 1;
+  overflow: auto; /* Add this line for outer scrollbar */
+}
+
+#usercart-content {
+  height: 100%; /* Ensure inner content has enough height */
+  overflow-y: auto; /* Add this line for inner scrollbar */
+}

@@ -1,0 +1,100 @@
+<div style="display: flex; align-items: center;">
+<img src="https://d2j6dbq0eux0bg.cloudfront.net/startersite/images/77229501/1657691468718.jpg" width="150"/>
+
+<h1 style="margin-left: 15px;">Welcome, {{current_user.name}} <br>here you can add or remove products</h1>
+</div>
+
+<div>
+       <form  action="/api/products" method ="get">
+    <button type="submit">Go back</button>
+    </form>
+</div>
+  <div class="col-md-6">
+      <h2>{{title_register}}</h2>
+      <form action="/api/products/edit_items/" method="post">
+       <label for="showName"></label>
+        <input type="radio" id="showName" name="showName" value="true" > Update
+        <input type="radio" id="hideName" name="showName" value="false" checked> Create New 
+        <input type="radio" id="showName" name="showName" value="delete" >Delete item(use ID)<br><br>
+        <input type="text" name="_id" placeholder="ID ITEM(only numbers)"  style="display: none;" />
+        <input type="text" name="title" placeholder="Title" />
+        <input type="text" name="description" placeholder="Description" />
+        <input type="text" name="code" placeholder="Code" />
+        <input type="number" name="price" placeholder="Price $bells" />
+        <input type="number" name="stock" placeholder="stock" />
+        <input type="text" name="category" placeholder="ID_CATEGORY if known" />
+        <input type="submit" value="Send" />
+      </form>
+      <div>
+
+<div>
+        {{#each products.docs}}
+            {{#if this.visible}}
+                <ul id={{this._id}}>
+                <h2>ID:{{this._id}} Name: {{this.title}}</h2>
+                <img src="{{this.thumbnail}}" style="width:150px; border:1px solid black; "alt="https://dodo.ac/np/images/a/af/Leaf_NH_Icon.png">
+                <li>Description: {{this.description}}</li>
+                <li>Code: {{this.code}}</li>
+                <li>Price: {{this.price}} Bells</li>
+                <li>category:{{this.category}}</li>
+                <li>stock:{{this.stock}}</li>
+                </ul>
+                </br>
+            {{/if}}
+        {{/each}}
+</div>
+<br/>
+<div>
+    {{#if products.hasPrevPage}}
+        <a href={{products.prevLink}}><< BACK</a>
+    {{/if}}
+    &nbsp;
+    {{products.page}}
+    &nbsp;  
+     {{#if products.hasNextPage}}
+        <a href={{products.nextLink}}>NEXT >></a>
+    {{/if}} 
+</div>
+<script>
+  const nameInput = document.querySelector('input[name="_id"]');
+  const titleInput = document.querySelector('input[name="title"]');
+  const descInput = document.querySelector('input[name="description"]');
+  const codeInput = document.querySelector('input[name="code"]');
+  const priceInput = document.querySelector('input[name="price"]');
+  const stockInput = document.querySelector('input[name="stock"]');
+  const categoryInput=document.querySelector('input[name="category"]');
+
+  const showNameRadio = document.querySelector('input[name="showName"][value="true"]');
+  const deleteRadio = document.querySelector('input[name="showName"][value="delete"]');
+  const hideNameRadio = document.querySelector('input[name="showName"][value="false"]');
+    deleteRadio.addEventListener('change',()=>{
+        nameInput.style.display = 'inline';
+        titleInput.style.display = 'none';
+        descInput.style.display = 'none';
+        codeInput.style.display = 'none';
+        priceInput.style.display = 'none';
+        stockInput.style.display = 'none';
+        categoryInput.style.display = 'none';
+    })
+  showNameRadio.addEventListener('change', () => {
+    nameInput.style.display = 'inline';
+  });
+
+  hideNameRadio.addEventListener('change', () => {
+    nameInput.style.display = 'none';
+    titleInput.style.display = 'inline';
+    descInput.style.display = 'inline';
+    codeInput.style.display = 'inline';
+    priceInput.style.display = 'inline';
+    stockInput.style.display = 'inline';
+    categoryInput.style.display = 'inline';
+  });
+</script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+<script type="module" src="/js/edit_index.js"></script>
+<link rel="stylesheet" href="/css/styles.css">
+

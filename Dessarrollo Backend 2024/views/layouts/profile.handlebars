@@ -1,0 +1,24 @@
+<div style="display: flex; align-items: center;">
+<img src="https://d2j6dbq0eux0bg.cloudfront.net/startersite/images/77229501/1657691468718.jpg" width="150"/>
+
+<h2 style="margin-left: 15px;">User Profile</h2>
+</div>
+{{#if user}}
+    <p>Welcome, {{user.name}},{{user.last_name}}!</p>
+    <p>Email: {{user.email}}</p>
+    <p>Your cart ID is: {{user.cart_id}}</p>
+     <div class="col-md-6">
+    <form id="log_out" action="/api/products/" method="get">
+    <button type="submit" id="products">open catalog</button>
+    </form>
+    <form id="log_out" action="/api/sessions/logout" method="post">
+    <button type="submit" id="log_out">Log Out</button>
+    </form></div>
+{{else}}
+    <p>User not logged in</p>
+{{/if}} 
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+<script type="module" src="/js/index.js"></script>
+<link rel="stylesheet" href="/css/styles.css">

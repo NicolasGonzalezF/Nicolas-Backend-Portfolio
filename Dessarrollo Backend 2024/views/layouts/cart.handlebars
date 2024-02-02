@@ -1,0 +1,29 @@
+<img src="https://d2j6dbq0eux0bg.cloudfront.net/startersite/images/77229501/1657691468718.jpg" width="150"/>
+
+<div>
+       <form  action="/api/products" method ="get">
+    <button type="submit">Go back</button>
+    </form>
+</div>
+
+
+<div id="usercart">
+        {{#each cart.docs}}
+                <ul id={{this._id}}>
+                <h2>ID:{{this._id}} Name: {{this.title}}</h2>
+                <img src="{{this.thumbnail}}" style="width:150px; border:1px solid black; "alt="https://dodo.ac/np/images/a/af/Leaf_NH_Icon.png">
+                <li>Description: {{this.description}}</li>
+                <li>Code: {{this.code}}</li>
+                <li>Price: {{this.price}} Bells</li>
+                <li>category:{{this.category}}</li>
+                </ul>
+                <button type="submit" id="" class="add_to_cart" value={{this._id}}>Add To Cart</button>
+                </br>
+        {{/each}}
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+<script type="module" src="/js/cart_index.js"></script>

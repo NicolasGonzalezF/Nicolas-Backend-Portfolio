@@ -1,0 +1,106 @@
+{{#if products.isValid}}
+<div style="display: flex; align-items: center;">
+<img src="https://d2j6dbq0eux0bg.cloudfront.net/startersite/images/77229501/1657691468718.jpg" width="150"/>
+
+<h1 style="margin-left: 15px;">Welcome, PLACEHOLDERNAME</h1>
+</div>
+<h3>PLACEHOLDER ROLE: PLACEHOLDER EMAIL</h3>
+{{#if isAdmin}}
+<p>---------------------------------------------------------------</p>
+<p>Congratulations {{current_user.name}}, only you can see this menu</p>
+<form  action="/api/products/edit_items" method ="get">
+  <button type="submit">Edit Products</button>
+  </form>
+  <p>-------------------------😊😎--------------------------------------</p>
+
+{{/if}}
+<div style="display: flex; align-items: center;">
+       <form >
+    <button type="submit">Profile</button>
+    </form>
+
+{{#unless isAdmin}}
+<form  style="margin-left: 15px;">
+    <button type="submit" id="cart">Go to Cart</button>
+</form>
+{{/unless}}
+<form  style="margin-left: 15px;">
+    <button type="submit" id="log_out">Log Out</button>
+</form>
+</div>
+<div id="usercart">  
+</div>
+<div>
+<h1>------------Product list ------------</h1>
+
+<div class="form-group">
+    <label for="country">SortBy:</label>
+    <select name="SortBy" id="SortBy" class="select">
+      <option value="Category">Category</option>
+      <option value="Price">Price</option>
+    </select>
+   
+    <label for="Category"></label>
+    <select name="Category" id="Category" class="select">
+      <option value="ALL">ALL</option>
+      <option value="655ad7223a1cc5c2459344cd">Clothing</option>
+      <option value="655b805a1670771b144fdd88">Decoration</option>
+      <option value="655b8093cee694d86c43a31a">Outdoors Decour</option>
+      <option value="655b80b66c2c23d0e7344823">Home Aplience</option>
+      <option value="655b80d8f6a1dcde699a6d0e">Home Decoration</option>
+      <option value="655b80eac7eaf18b9c011295">Museum Object</option>
+      <option value="655b92be363b19dfbd005b5b">Dummy Item</option>
+
+    </select>
+    <label for="Price_sort"></label>
+    <select name="Price_sort" id="Price_sort" class="select">
+        <option value="asc">ASC LOW-HIGH</option>
+        <option value="desc">DESC HIGH-LOW</option>
+    </select>
+    <button type="submit" value="" id="sort_button">Sort</button>
+</div>
+
+
+
+<div>
+        {{#each products.docs}}
+            {{#if this.visible}}
+                <ul id={{this._id}}>
+                <h2>ID:{{this._id}} Name: {{this.title}}</h2>
+                <img src="{{this.thumbnail}}" style="width:150px; border:1px solid black; "alt="https://dodo.ac/np/images/a/af/Leaf_NH_Icon.png">
+                <li>Description: {{this.description}}</li>
+                <li>Code: {{this.code}}</li>
+                <li>Price: {{this.price}} Bells</li>
+                <li>category:{{this.category}}</li>
+                </ul>
+                <button type="submit" id="" class="add_to_cart" value={{this._id}}>Add To Cart</button>
+                </br>
+            {{/if}}
+        {{/each}}
+</div>
+<br/>
+<div>
+    {{#if products.hasPrevPage}}
+        <a href={{products.prevLink}}><< BACK</a>
+    {{/if}}
+    &nbsp;
+    {{products.page}}
+    &nbsp;
+    &nbsp; 
+     {{#if products.hasNextPage}}
+        <a href={{products.nextLink}}>NEXT >></a>
+    {{/if}} 
+</div>
+{{else}}
+<h1>No items available at this time </h1>
+{{/if}}
+
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+<script type="module" src="/js/mockedindex.js"></script>
+<link rel="stylesheet" href="/css/styles.css">
+

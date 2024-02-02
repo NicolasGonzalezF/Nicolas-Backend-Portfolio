@@ -1,0 +1,26 @@
+<div style="display: flex; align-items: center;">
+<img src="https://d2j6dbq0eux0bg.cloudfront.net/startersite/images/77229501/1657691468718.jpg" width="150"/>
+
+<h1 style="margin-left: 15px;">Welcome please log in</h1>
+</div>
+    <form id="loginForm" action="/api/sessions/login" method="post">
+    <label for="email">Username:</label>
+    <input type="text" id="email" name="email" required>
+    <br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+    <br>
+    <button type="submit">Login</button>
+    </form>
+    <form id="forgotten" action ="/recovery"method ="get">
+    <button type="submit"> Forgotten passcode</button>
+    </form>
+
+  <h2>Don't have an account? Register here.</h2>
+  <form id="register_rerout" action="/register" method="get">
+    <button type="submit" id="register_btn">Register</button>
+    </form>
+  </form>
+  <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+  
+  <script type="module" src="/js/log_index.js"></script>
